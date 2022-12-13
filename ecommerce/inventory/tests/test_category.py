@@ -9,4 +9,3 @@ def test_create_category_with_child(category_with_child):
     new_sub_category=category_with_child
     get_category=Category.objects.all().first()
     assert get_category.children.first().id==new_sub_category.id
- 
