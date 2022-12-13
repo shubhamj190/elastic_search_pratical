@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     "ecommerce.drf",
     'rest_framework',
     'mptt',
+    "ecommerce.demo",
+    "ecommerce.search",
+    "django_elasticsearch_dsl"
 ]
 
 MIDDLEWARE = [
@@ -132,4 +135,12 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PERMISSION_CLASSES': [
     #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     # ]
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100
+}
+
+ELASTICSEARCH_DSL={
+    'default': {
+        'hosts': 'localhost:9200'
+    },
 }
